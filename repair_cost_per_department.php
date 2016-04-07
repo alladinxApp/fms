@@ -60,7 +60,7 @@
                 <div class="tray tray-center ph30 va-t posr animated-delay animated-long" data-animate='["<?=$data_animate_time;?>","<?=$data_animate_type;?>"]'>
                     <div class="mw1100 center-block">
 
-                        <? require_once(VIEW_PATH . V_TBACOSTPERSUPPLIER); ?>
+                        <? require_once(VIEW_PATH . V_REPAIRCOSTPERDEPARTMENT); ?>
 
                     </div>
                 </div>
@@ -80,7 +80,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function() {
             // Init Boostrap Multiselect
-            $('#txtSupplier').multiselect();
+            $('#txtDepartment').multiselect();
 
             $("#txtFromDt,#txtToDt").datepicker({
                 dateFormat: 'yy-mm-dd'

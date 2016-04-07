@@ -80,7 +80,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function() {
             // Init Boostrap Multiselect
-            $('#txtAssignee,#txtEquipment').multiselect();
+            $('#txtAssignee,#txtEquipment,#txtDepartment').multiselect();
 
             $("#txtFromDt,#txtToDt").datepicker({
                 dateFormat: 'yy-mm-dd'

@@ -34,7 +34,7 @@
 	define(PRINTWO_MODEL, "print_workorderModel.php");
 
 	define(TBACOSTPERSUPPLIER_MODEL, "tbaCostPerSupplierModel.php");
-	// define(REPAIRCOSTPERDEPARTMENT_MODEL, "repairCostPerDepartmentModel.php");
+	define(REPAIRCOSTPERDEPARTMENT_MODEL, "repairCostPerDepartmentModel.php");
 	define(REPAIRCOSTPERMAKE_MODEL, "repairCostPerMakeModel.php");
 	define(REPAIRCOSTPERSUPPLIER_MODEL, "repairCostPerSupplierModel.php");
 	define(EQUIPMENTMASTERLIST_MODEL, "equipmentMasterListModel.php");

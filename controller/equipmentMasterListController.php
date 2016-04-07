@@ -4,6 +4,7 @@
 	if(isset($_POST['search']) && !empty($_POST['search']) && $_POST['search'] == 1){
 		$fromdt = date("Y-m-d 00:00");
 		$todt = date("Y-m-d 23:59");
+		$search = "";
 		
 		if(!empty($_POST['txtFromDt'])){
 			$fromdt = dateFormat($_POST['txtFromDt'], "Y-m-d");
@@ -18,10 +19,10 @@
 			$search .= "AND isWarranty = '$isWarranty' ";
 		}
 
-		if($search == null){
-			$dt = date("Y-m-d");
-			$search .= "AND (woTransactionDate between '$dt 00:00' AND '$dt 23:59') ";
-		}
+		// if($search == null){
+		// 	$dt = date("Y-m-d");
+		// 	$search .= "AND (woTransactionDate between '$dt 00:00' AND '$dt 23:59') ";
+		// }
 
 		// SET FMS DB
 		$fms_db = new DBConfig;

@@ -26,7 +26,7 @@
 	define(ASSIGNEELICENSEREGISTRATIONREPORT_CONTROLLER, "assigneelicenseregistrationreportController.php");
 	define(INVOICEPOSTING_CONTROLLER, "invoicePostingController.php");
 	define(TBACOSTPERSUPPLIER_CONTROLLER, "tbaCostPerSupplierController.php");
-	// define(REPAIRCOSTPERDEPARTMENT_CONTROLLER, "repairCostPerDepartmentController.php");
+	define(REPAIRCOSTPERDEPARTMENT_CONTROLLER, "repairCostPerDepartmentController.php");
 	define(REPAIRCOSTPERMAKE_CONTROLLER, "repairCostPerMakeController.php");
 	define(REPAIRCOSTPERSUPPLIER_CONTROLLER, "repairCostPerSupplierController.php");
 	define(EQUIPMENTMASTERLIST_CONTROLLER, "equipmentMasterListController.php");

@@ -1,4 +1,4 @@
-<?
+// <?
 	// -- START VIEWS --
 	// CONTROL NO
 	define(V_CONTROLNO, "controlno.php");
@@ -111,7 +111,7 @@
 
 	// REPORTS
 	define(V_TBACOSTPERSUPPLIER, "tba_cost_per_supplier.php");
-	// define(V_REPAIRCOSTPERDEPARTMENT, "repair_cost_per_department.php");
+	define(V_REPAIRCOSTPERDEPARTMENT, "repair_cost_per_department.php");
 	define(V_REPAIRCOSTPERMAKE, "repair_cost_per_make.php");
 	define(V_REPAIRCOSTPERSUPPLIER, "repair_cost_per_supplier.php");
 	define(V_EQUIPMENTMASTERLIST, "equipment_master_list.php");

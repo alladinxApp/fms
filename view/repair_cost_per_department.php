@@ -21,8 +21,8 @@
                     <div class="col-lg-2">
                          <select class="required" name="txtDepartment" id="txtDepartment">
                             <option value="">Select Supplier</option>
-                            <? for($i=0;$i<count($row_suppliermst);$i++){ ?>
-                            <option value="<?=$row_suppliermst[$i]['supplierID'];?>"><?=$row_suppliermst[$i]['supplierName'];?></option>
+                            <? for($i=0;$i<count($row_departmentmst);$i++){ ?>
+                            <option value="<?=$row_departmentmst[$i]['departmentID'];?>"><?=$row_departmentmst[$i]['departmentName'];?></option>
                             <? } ?>
                         </select>
                     </div>

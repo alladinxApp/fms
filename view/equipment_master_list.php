@@ -6,7 +6,7 @@
     <div class="panel">
         <div class="panel-body">
             <form role="form" class="form-horizontal" method="Post" id="workorder-search" action="equipment_master_list.php">
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label class="col-lg-2" for="txtFromDt">From</label>
                     <div class="col-lg-2">
                         <input type="text" name="txtFromDt" id="txtFromDt" class="form-control gui-input input-sm" placeholder="YYYY-MM-DD" />
@@ -15,7 +15,7 @@
                     <div class="col-lg-2">
                         <input type="text" name="txtToDt" id="txtToDt" class="form-control gui-input input-sm" placeholder="YYYY-MM-DD" />
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label class="col-lg-2" for="txtAssignee">Assignee</label>
                     <div class="col-lg-2">
@@ -34,6 +34,17 @@
                             <option value="">Select Equipment</option>
                             <? for($i=0;$i<count($row_equipmentmst);$i++){ ?>
                             <option value="<?=$row_equipmentmst[$i]['equipmentID'];?>"><?=$row_equipmentmst[$i]['plateNo'];?></option>
+                            <? } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2" for="txtDepartment">Department</label>
+                    <div class="col-lg-2">
+                         <select class="required" name="txtDepartment" id="txtDepartment">
+                            <option value="">Select Department</option>
+                            <? for($i=0;$i<count($row_departmentmst);$i++){ ?>
+                            <option value="<?=$row_departmentmst[$i]['departmentID'];?>"><?=$row_departmentmst[$i]['departmentName'];?></option>
                             <? } ?>
                         </select>
                     </div>
