@@ -140,7 +140,7 @@
                                             $desc = $row_workorderdtl[$i]['partsName']; // description 
                                             $partsID = $row_workorderdtl[$i]['woReferenceNo'];
                                             $seqNo = $row_workorderdtl[$i]['seqNo'];
-                                            $priceQty = $row_workorderdtl[$i]['partsPrice'] . ' (' . $row_workorderdtl[$i]['qty'] . ')'; // price(qty)
+                                            $priceQty = number_format($row_workorderdtl[$i]['partsPrice']) . ' x ( ' . $row_workorderdtl[$i]['qty'] . ' )'; // price(qty)
                                             $total = ($row_workorderdtl[$i]['partsPrice'] * $row_workorderdtl[$i]['qty']);
                                             $partsCost += $total;
 
@@ -149,7 +149,6 @@
                                                         . ':' . $row_workorderdtl[$i]['partsPrice']
                                                         . ':' . $row_workorderdtl[$i]['qty'] . '|';
 
-                                            $partsCost += $total;
                                             $totalqty += $row_workorderdtl[$i]['qty'];
                                     ?>
                                     <tr>
@@ -205,7 +204,7 @@
                             <div class="form-group">
                                 <label class="col-lg-3" for="txtSubTotal">Sub-Total</label>
                                 <div class="col-lg-4">
-                                    <input type="text" value="<?=$row_workorder[0]['subTotal'];?>" name="txtSubTotal" id="txtSubTotal" readonly class="form-control gui-input input-sm" placeholder="0.00" />
+                                    <input type="text" value="<?=number_format($row_workorder[0]['subTotal'],2);?>" name="txtSubTotal" id="txtSubTotal" readonly class="form-control gui-input input-sm" placeholder="0.00" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -245,19 +244,19 @@
                             <div class="form-group">
                                 <label class="col-lg-3" for="txtInvoiceAmount">Invoice Amount</label>
                                 <div class="col-lg-4">
-                                    <input type="text" <?=$disable_invoice;?> value="<?=$row_workorder[0]['invoiceAmount'];?>" name="txtInvoiceAmount" id="txtInvoiceAmount" class="form-control gui-input input-sm" placeholder="0.00" />
+                                    <input type="text" <?=$disable_invoice;?> onBlur="return getVariance();" onKeyDown="return getVariance();" onKeyUp="return getVariance();" value="<?=$row_workorder[0]['invoiceAmount'];?>" name="txtInvoiceAmount" id="txtInvoiceAmount" class="form-control gui-input input-sm" placeholder="0.00" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3" for="txtVarianceAmount">Variance Amount</label>
                                 <div class="col-lg-4">
-                                    <input type="text" <?=$disable_invoice;?> value="<?=$row_workorder[0]['varianceAmount'];?>" name="txtVarianceAmount" id="txtVarianceAmount" class="form-control gui-input input-sm" placeholder="0.00" />
+                                    <input type="text" readonly value="<?=$row_workorder[0]['varianceAmount'];?>" name="txtVarianceAmount" id="txtVarianceAmount" class="form-control gui-input input-sm" placeholder="0.00" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3" for="txtVariance">Variance %</label>
                                 <div class="col-lg-4">
-                                    <input type="text" <?=$disable_invoice;?> value="<?=$row_workorder[0]['variance'];?>" name="txtVariance" id="txtVariance" class="form-control gui-input input-sm" placeholder="0.00" />
+                                    <input type="text" readonly value="<?=$row_workorder[0]['variance'];?>" name="txtVariance" id="txtVariance" class="form-control gui-input input-sm" placeholder="0.00" />
                                 </div>
                             </div>
                             <? } ?>
@@ -376,7 +375,7 @@
                 <div class="form-group">
                     <label class="col-lg-2">&nbsp;</label>
                     <div class="col-xs-2">
-                        <button class="btn btn-sm btn-dark btn-block btn-gradient" type="submit"> UPDATE </button>
+                        <button class="btn btn-sm btn-dark btn-block btn-gradient" type="submit" name="btnUpdate" id="btnUpdate"> UPDATE </button>
                     </div>
                 </div>
                 <input type="hidden" name="update" id="update" value="1" />

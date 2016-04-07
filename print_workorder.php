@@ -18,6 +18,15 @@
 	$workordermst->doQuery("query");
 	$row_workordermst = $workordermst->getLists();
 
+	// SET WORK ORDER
+	$workorderdtl = new Table;
+	$workorderdtl->setSQLType($fms_db->getSQLType());
+	$workorderdtl->setInstance($fms_db->getInstance());
+	$workorderdtl->setView("v_workorderdetail");
+	$workorderdtl->setParam("WHERE woReferenceNo = '$id'");
+	$workorderdtl->doQuery("query");
+	$row_workorderdtl = $workorderdtl->getLists();
+	
 	$equipmentID = $row_workordermst[0]['equipmentID'];
 
 	// SET EQUIPMENT
@@ -58,7 +67,8 @@
 
 	$pdf = new printWorkOrder;
 	$pdf->setHeaderInfo($company);
-	$pdf->setWorkOrder($row_workordermst[0]);
+	$pdf->setWorkOrderMst($row_workordermst[0]);
+	$pdf->setWorkOrderDtl($row_workorderdtl);
 	$pdf->setEquipment($row_equipmentmst[0]);
 	$pdf->setCompany($row_companymst[0]);
 	$pdf->setAssignee($row_assigneemst[0]);

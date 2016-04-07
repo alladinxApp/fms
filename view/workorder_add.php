@@ -147,7 +147,7 @@
                 <div class="form-group">
                     <label class="col-lg-2">&nbsp;</label>
                     <div class="col-lg-1">
-                        <button class="btn btn-sm btn-dark btn-block btn-gradient" type="submit"> SAVE </button>
+                        <button class="btn btn-sm btn-dark btn-block btn-gradient" type="submit" name="btnSave" id="btnSave"> SAVE </button>
                     </div>
                 </div>
                 <input type="hidden" name="save" id="save" value="1" />

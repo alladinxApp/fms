@@ -111,10 +111,9 @@
             <td align="center">&nbsp;</td>
         </tr>
         <?
-            $subTotal = ($lbr + $misc + $partsCost);
+            $subTotal = (($lbr + $misc + $partsCost) - $disc);
             $tax = ($subTotal * .12);
-            $taxable = ($subTotal + $tax);
-            $totalCost = ($taxable - $disc);
+            $totalCost = ($subTotal + $tax);
         ?>
     </table>
     <input type="hidden" name="txtPartsArray" id="txtPartsArray" value="<?=$nArrParts;?>" />

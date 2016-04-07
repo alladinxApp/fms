@@ -65,9 +65,9 @@
                                         $cnt = 1; 
                                         $newArrParts = null;
                                         for($i=0;$i<count($row_wo_dtl);$i++){ 
-                                            $desc = $row_wo_dtl[$i]['description']; // description 
-                                            $partsID = $row_wo_dtl[$i]['partsID'];
-                                            $priceQty = number_format($row_wo_dtl[$i]['partsPrice'],2) . ' (' . $row_wo_dtl[$i]['qty'] . ')'; // price(qty)
+                                            $desc = $row_wo_dtl[$i]['partsName']; // description 
+                                            $partsID = $row_wo_dtl[$i]['woReferenceNo'];
+                                            $priceQty = number_format($row_wo_dtl[$i]['partsPrice'],2) . ' x ( ' . $row_wo_dtl[$i]['qty'] . ' )'; // price(qty)
                                             $total = ($row_wo_dtl[$i]['partsPrice'] * $row_wo_dtl[$i]['qty']);
                                             $partsCost += $total;
                                             $totalqty += $row_wo_dtl[$i]['qty'];
@@ -89,27 +89,27 @@
                         <? } ?>
                         <div class="form-group">
                             <label class="col-lg-4" for="txtLabor">Labor</label>
-                            <div class="col-lg-4">: <?=$row_chkwo[0]['labor'];?></div>
+                            <div class="col-lg-4">: <?=number_format($row_chkwo[0]['labor'],2);?></div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4" for="txtMiscellaneous">Miscellaneous</label>
-                            <div class="col-lg-4">: <?=$row_chkwo[0]['miscellaneous'];?></div>
+                            <div class="col-lg-4">: <?=number_format($row_chkwo[0]['miscellaneous'],2);?></div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4" for="txtParts">Parts</label>
-                            <div class="col-lg-4">: <?=$partsCost;?></div>
+                            <div class="col-lg-4">: <?=number_format($partsCost,2);?></div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4" for="txtDiscount">Discount</label>
-                            <div class="col-lg-4">: <?=$row_chkwo[0]['discount'];?></div>
+                            <div class="col-lg-4">: <?=number_format($row_chkwo[0]['discount'],2);?></div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4" for="txtTax">Tax</label>
-                            <div class="col-lg-4">: <?=$row_chkwo[0]['tax'];?></div>
+                            <div class="col-lg-4">: <?=number_format($row_chkwo[0]['tax'],2);?></div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4" for="txtTotalCost"><b>TotalCost</b></label>
-                            <div class="col-lg-4"><b>: <?=$row_chkwo[0]['totalCost'];?></b></div>
+                            <div class="col-lg-4"><b>: <?=number_format($row_chkwo[0]['totalCost'],2);?></b></div>
                         </div>
                     </div>
                 </div>

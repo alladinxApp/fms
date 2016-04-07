@@ -223,7 +223,7 @@
                 disc = 0;
             }
 
-            var subtotal = (parseFloat(labor) + parseFloat(misc) + parseFloat(parts));
+            var subtotal = ((parseFloat(labor) + parseFloat(misc) + parseFloat(parts)) - parseFloat(disc));
             var tax = parseFloat(subtotal * .12);
 
             if(isNaN(tax) == true){
@@ -233,9 +233,20 @@
             $('#txtTax').val(tax.toFixed(2));
             $('#txtSubTotal').val(subtotal.toFixed(2));
 
-            var totalcost = ((parseFloat(subtotal) + parseFloat(tax)) - parseFloat(disc));
+            var totalcost = (parseFloat(subtotal) + parseFloat(tax));
 
             $('#txtTotalCost').val(totalcost.toFixed(2));
+        }
+
+        function getVariance(){
+            var totalCost = $("#txtTotalCost").val().replace(/,/g, '');;
+            var invoiceAmount = $("#txtInvoiceAmount").val().replace(/,/g, '');;
+
+            var varianceamnt = ( parseFloat(totalCost) - parseFloat(invoiceAmount) );
+            var variance = ( parseFloat(varianceamnt) / parseFloat(totalCost) * 100 );
+
+            $("#txtVariance").val(variance.toFixed(2));
+            $("#txtVarianceAmount").val(varianceamnt.toFixed(2));
         }
 
         jQuery(document).ready(function() {
@@ -249,7 +260,7 @@
             $('#txtNewParts').multiselect();
 
             // NUMBERS w/ DECIMAL AND COMMA
-            $('#txtLabor,#txtMiscellaneous,#txtParts,#txtDiscount,#txtTax,#txtTotalCost').priceFormat({
+            $('#txtLabor,#txtMiscellaneous,#txtParts,#txtDiscount,#txtTax,#txtTotalCost,#txtInvoiceAmount').priceFormat({
                 clearPrefix: true,
                 prefix: '',
                 centsSeparator: '.',
@@ -258,7 +269,16 @@
             });
 
             // NUMBERS ONLY w/ DECIMAL BUT w/o COMMA
-            $('#txtMeter,#txtVariance,#txtPrice').priceFormat({
+            $('#txtMeter,#txtPrice').priceFormat({
+                clearPrefix: true,
+                prefix: '',
+                centsSeparator: '.',
+                thousandsSeparator: '',
+                centsLimit: 2
+            });
+
+            // NUMBERS ONLY w/ DECIMAL BUT w/o COMMA
+            $('#txtVariance').priceFormat({
                 clearPrefix: true,
                 prefix: '',
                 centsSeparator: '.',
@@ -267,7 +287,7 @@
             });
 
             // NUMBERS ONLY w/o DECIMAL and COMMAN
-            $('#txtMeter,#txtInvoiceAmount,#txtVarianceAmount').priceFormat({
+            $('#txtMeter').priceFormat({
                 clearPrefix: true,
                 prefix: '',
                 centsSeparator: '',
@@ -283,6 +303,27 @@
                 dateFormat: 'yy-mm-dd',
                 onSelect: function(selected) {
                    $("#txtStartDate").datepicker("option","maxDate", selected)
+                }
+            });
+
+            $('#btnUpdate').on("click", function(e){
+                var serviceType = $("#txtServiceType").val();
+                var equipment = $("#txtEquipment").val();
+                var supplier = $("#txtSupplier").val();
+
+                if(serviceType == ""){
+                    alert("Please select service type!");
+                    return false;
+                }
+
+                if(equipment == ""){
+                    alert("Please select equipment!");
+                    return false;
+                }
+
+                if(supplier == ""){
+                    alert("Please select supplier!");
+                    return false;
                 }
             });
 
@@ -318,12 +359,10 @@
                             required: true
                     },
                     txtInvoiceAmount: {
-                            required: true,
-                            min: 1
+                            required: true
                     },
                     txtVarianceAmount: {
-                            required: true,
-                            min: 1
+                            required: true
                     },
                     txtVariance: {
                             required: true
@@ -357,12 +396,10 @@
                             required: 'Please enter Completion Date!'
                     },
                     txtInvoiceAmount: {
-                            required: 'Please enter Invoice Amount!',
-                            min: 'Invoice amount cannot be zero(0) of value!'
+                            required: 'Please enter Invoice Amount!'
                     },
                     txtVarianceAmount: {
-                            required: 'Please enter VarianceAmount!',
-                            min: 'Variance amount cannot be zero(0) of value!'
+                            required: 'Please enter VarianceAmount!'
                     },
                     txtVariance: {
                             required: 'Please enter variance!'

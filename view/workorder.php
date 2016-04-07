@@ -71,7 +71,7 @@
                             default: $danger = null;
                         }
                 ?>
-                <tr <?=$danger;?>>
+                <tr class="success">
                     <td><?=$cnt;?></td>
                     <td><?=$row_searchwo[$i]['woReferenceNo'];?></td>
                     <td align="center"><?=dateFormat($row_searchwo[$i]['woTransactionDate'],"M d, Y");?></td>

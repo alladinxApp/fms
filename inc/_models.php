@@ -31,5 +31,12 @@
 	define(FPDF_MODEL, "fpdf.php");
 	define(MAILHANDLER_MODEL, "mailModel.php");
 	define(PRINTWO_MODEL, "print_workorderModel.php");
+
+	define(TBACOSTPERSUPPLIER_MODEL, "tbaCostPerSupplierModel.php");
+	// define(REPAIRCOSTPERDEPARTMENT_MODEL, "repairCostPerDepartmentModel.php");
+	define(REPAIRCOSTPERMAKE_MODEL, "repairCostPerMakeModel.php");
+	define(REPAIRCOSTPERSUPPLIER_MODEL, "repairCostPerSupplierModel.php");
+	define(EQUIPMENTMASTERLIST_MODEL, "equipmentMasterListModel.php");
+	define(REPAIRHISTORY_MODEL, "repairHistoryModel.php");
 	// -- END MODELS --
 ?>

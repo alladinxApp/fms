@@ -11,7 +11,7 @@
 		if(!empty($_POST['txtFromDt']) && empty($_POST['txtToDt'])){
 			$dt = date("Y-m-d");
 			$toDt = dateFormat($_POST['txtToDt'],"Y-m-d");
-			$search .= "AND (transactionDate between '$dt 00:00' AND '$toDt 23:59') ";
+			$search .= "AND (woTransactionDate between '$dt 00:00' AND '$toDt 23:59') ";
 		}
 		if(!empty($_POST['txtServiceType'])){
 			$serviceType = $_POST['txtServiceType'];
@@ -37,12 +37,10 @@
 			$status = $_POST['txtStatus'];
 			$search .= "AND status = '$status' ";
 		}
-		// }else{
-		// 	$search .= "AND status IN('5','6','7','8') ";
-		// }
+
 		if($search == null){
 			$dt = date("Y-m-d");
-			$search .= "AND (transactionDate between '$dt 00:00' AND '$dt 23:59') ";
+			$search .= "AND (woTransactionDate between '$dt 00:00' AND '$dt 23:59') ";
 		}
 
 		// SET FMS DB
@@ -368,9 +366,9 @@
 			case "5":
 					$statusmsg = 'update.';
 					if(empty($invRefNo) || $invRefNo == null){
-						$invoiceAmount = $_POST['txtInvoiceAmount'];
-						$varianceAmount = $_POST['txtVarianceAmount'];
-						$variance = $_POST['txtVariance'];
+						$invoiceAmount = str_replace(",","",$_POST['txtInvoiceAmount']);
+						$varianceAmount = str_replace(",","",$_POST['txtVarianceAmount']);
+						$variance = str_replace(",","",$_POST['txtVariance']);
 						$newNum = getNewCtrlNo("invoicing");
 						
 						$values .= "invoiceReferenceNo = '$newNum', invoiceDate = '$today', invoiceAmount = '$invoiceAmount'

@@ -217,7 +217,7 @@
                 disc = 0;
             }
 
-            var subtotal = (parseFloat(labor) + parseFloat(misc) + parseFloat(parts));
+            var subtotal = ((parseFloat(labor) + parseFloat(misc) + parseFloat(parts)) - parseFloat(disc));
             var tax = parseFloat(subtotal * .12);
 
             if(isNaN(tax) == true){
@@ -227,8 +227,8 @@
             $('#txtTax').val(tax.toFixed(2));
             $('#txtSubTotal').val(subtotal.toFixed(2));
 
-            var totalcost = ((parseFloat(subtotal) + parseFloat(tax)) - parseFloat(disc));
-
+            var totalcost = (parseFloat(subtotal) + parseFloat(tax));
+            
             $('#txtTotalCost').val(totalcost.toFixed(2));
         }
 
@@ -262,10 +262,26 @@
                 dateFormat: 'yy-mm-dd'
             });
 
+            $('#btnSave').on("click", function(e){
+                var serviceType = $("#txtServiceType").val();
+                var equipment = $("#txtEquipment").val();
+
+                if(serviceType == ""){
+                    alert("Please select service type!");
+                    return false;
+                }
+
+                if(equipment == ""){
+                    alert("Please select equipment!");
+                    return false;
+                }
+            });
+
             $( "#workorder-form" ).validate({
                 errorClass: "state-error",
                 validClass: "state-success",
                 errorElement: "em",
+
 
                 rules: {
                     txtServiceType: {

@@ -104,5 +104,13 @@
 	// UPLOAD MILEAGE
 	define(V_UPLOADMILEAGE, "uploadmileage.php");
 
+	// REPORTS
+	define(V_TBACOSTPERSUPPLIER, "tba_cost_per_supplier.php");
+	// define(V_REPAIRCOSTPERDEPARTMENT, "repair_cost_per_department.php");
+	define(V_REPAIRCOSTPERMAKE, "repair_cost_per_make.php");
+	define(V_REPAIRCOSTPERSUPPLIER, "repair_cost_per_supplier.php");
+	define(V_EQUIPMENTMASTERLIST, "equipment_master_list.php");
+	define(V_REPAIRHISTORY, "repair_history.php");
+
 	// -- END VIEWS --
 ?>
