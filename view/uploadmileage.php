@@ -20,7 +20,7 @@
     }
 </style>
 <h2>UPLOAD MILEAGE</h2>
-<p><a href="files/uploadmileage_template.php"><span class="fa fa-download"> DOWNLOAD TEMPLATE</span></a></p>
+<p><a href="files/equipment_template.csv"><span class="fa fa-download"> DOWNLOAD TEMPLATE</span></a></p>
 <div class="row">
 
     <div class="panel">
