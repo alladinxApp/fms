@@ -17,11 +17,11 @@
                     <label class="col-sm-3" for="txtCompany">Company</label>
                     <div class="col-sm-4">
                         <select class="required" name="txtCompany" id="txtCompany">
-                            <!-- <option value="">Select Company</option> -->
+                            <option value="">Select Company</option>
                             <? 
                                 $selected = null;
                                 for($i=0;$i<count($row_companymst);$i++){ 
-                                    if($row_companymst[$i]['companyID'] == $row_assignee[0]['comapanyID']){
+                                    if($row_companymst[$i]['companyID'] == $row_assignee[0]['companyID']){
                                         $selected = 'selected';
                                     }else{
                                         $selected = null;
@@ -36,11 +36,11 @@
                     <label class="col-sm-3" for="txtLocation">Location</label>
                     <div class="col-sm-4">
                         <select class="required" name="txtLocation" id="txtLocation">
-                            <!-- <option value="">Select Location</option> -->
+                            <option value="">Select Location</option>
                             <? 
                                 $selected = null;
                                 for($i=0;$i<count($row_locationmst);$i++){ 
-                                    if($row_companymst[$i]['locationID'] == $row_assignee[0]['locationID']){
+                                    if($row_locationmst[$i]['locationID'] == $row_assignee[0]['locationID']){
                                         $selected = 'selected';
                                     }else{
                                         $selected = null;
@@ -73,6 +73,7 @@
                     <label class="col-sm-3" for="txtGender">Gender</label>
                     <div class="col-sm-4">
                         <select class="required" name="txtGender" id="txtGender">
+                            <option value="">Select Gender</option>
                             <option value="M" <? if($row_assignee[0]['gender'] == "M"){ echo 'selected'; } ?>>Male</option>
                             <option value="F" <? if($row_assignee[0]['gender'] == "F"){ echo 'selected'; } ?>>Female</option>
                         </select>
@@ -116,8 +117,21 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3" for="txtDepartment">Department</label>
-                    <div class="col-lg-4">
-                        <input type="text" value="<?=$row_assignee[0]['department'];?>" name="txtDepartment" id="txtDepartment" class="form-control gui-input input-sm" placeholder="Enter Department Here..." />
+                    <div class="col-sm-4">
+                        <select class="required" name="txtDepartment" id="txtDepartment">
+                            <option value="">Select Department</option>
+                            <? 
+                                $selected = null;
+                                for($i=0;$i<count($row_departmentmst);$i++){ 
+                                    if($row_departmentmst[$i]['departmentID'] == $row_assignee[0]['department']){
+                                        $selected = 'selected';
+                                    }else{
+                                        $selected = null;
+                                    }
+                            ?>
+                            <option value="<?=$row_departmentmst[$i]['departmentID'];?>" <?=$selected;?>><?=$row_departmentmst[$i]['departmentName'];?></option>
+                            <? } ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">

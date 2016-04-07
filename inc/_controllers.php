@@ -19,6 +19,7 @@
 	define(ASSIGNEECOMPANY_CONTROLLER, "assigneecompanyController.php");
 	define(PORECEIVING_CONTROLLER, "poreceivingController.php");
 	define(REMINDERS_CONTROLLER, "remindersController.php");
+	define(DEPARTMENT_CONTROLLER, "departmentController.php");
 	define(ASSIGNEEEQUIPMENT_CONTROLLER, "assigneeequipmentController.php");
 	define(UPLOADMILEAGE_CONTROLLER, "uploadmileageController.php");
 	define(EQUIPMENTREGISTRATIONREPORT_CONTROLLER, "equipmentregistrationreportController.php");

@@ -27,6 +27,7 @@
 	define(ASSIGNEEEQUIPMENT_MODEL, "assigneeequipmentModel.php");
 	define(INVOICING_MODEL, "invoicingModel.php");
 	define(NOTIFICATION_MODEL, "notificationModel.php");
+	define(DEPARTMENT_MODEL, "departmentModel.php");
 
 	define(FPDF_MODEL, "fpdf.php");
 	define(MAILHANDLER_MODEL, "mailModel.php");

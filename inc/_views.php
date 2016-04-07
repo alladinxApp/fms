@@ -97,6 +97,11 @@
 	define(V_INVOICEPOSTING, "invoice_posting.php");
 	define(V_INVOICINGSEARCH, "invoicing_search.php");
 
+	// DEPARTMENT
+	define(V_DEPARTMENT, "department.php");
+	define(V_DEPARTMENTADD, "department_add.php");
+	define(V_DEPARTMENTEDIT, "department_edit.php");
+
 	// USER LOGIN
 	define(V_LOGIN, "login.php");
 	define(V_DEFAULT, "default.php");

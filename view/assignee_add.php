@@ -14,7 +14,7 @@
                     <label class="col-sm-3" for="txtCompany">Company</label>
                     <div class="col-sm-4">
                         <select class="required" name="txtCompany" id="txtCompany">
-                            <!-- <option value="">Select Company</option> -->
+                            <option value="">Select Company</option>
                             <? for($i=0;$i<count($row_companymst);$i++){ ?>
                             <option value="<?=$row_companymst[$i]['companyID'];?>"><?=$row_companymst[$i]['companyName'];?></option>
                             <? } ?>
@@ -25,7 +25,7 @@
                     <label class="col-sm-3" for="txtLocation">Location</label>
                     <div class="col-sm-4">
                         <select class="required" name="txtLocation" id="txtLocation">
-                            <!-- <option value="">Select Location</option> -->
+                            <option value="">Select Location</option>
                             <? for($i=0;$i<count($row_locationmst);$i++){ ?>
                             <option value="<?=$row_locationmst[$i]['locationID'];?>"><?=$row_locationmst[$i]['locationName'];?></option>
                             <? } ?>
@@ -54,6 +54,7 @@
                     <label class="col-sm-3" for="txtGender">Gender</label>
                     <div class="col-sm-4">
                         <select class="required" name="txtGender" id="txtGender">
+                            <option value="">Select Gender</option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
                         </select>
@@ -97,8 +98,13 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3" for="txtDepartment">Department</label>
-                    <div class="col-lg-4">
-                        <input type="text" name="txtDepartment" id="txtDepartment" class="form-control gui-input input-sm" placeholder="Enter Department Here..." />
+                    <div class="col-sm-4">
+                        <select class="required" name="txtDepartment" id="txtDepartment">
+                            <option value="">Select Department</option>
+                            <? for($i=0;$i<count($row_departmentmst);$i++){ ?>
+                            <option value="<?=$row_departmentmst[$i]['departmentID'];?>"><?=$row_departmentmst[$i]['departmentName'];?></option>
+                            <? } ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -143,7 +149,7 @@
                 <div class="form-group">
                     <label class="col-sm-3">&nbsp;</label>
                     <div class="col-xs-1">
-                        <button class="btn btn-sm btn-dark btn-block btn-gradient" type="submit"> SAVE </button>
+                        <button class="btn btn-sm btn-dark btn-block btn-gradient" type="submit" name="btnSave" id="btnSave"> SAVE </button>
                     </div>
                 </div>
                 <input type="hidden" name="save" id="save" value="1" />

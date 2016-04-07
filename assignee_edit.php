@@ -115,7 +115,34 @@
                 }
             });
 
-            $('#txtCompany,#txtLocation,#txtGender,#txtStatus').multiselect();
+            $('#txtCompany,#txtLocation,#txtGender,#txtStatus,#txtDepartment').multiselect();
+
+            $('#btnSave').on("click", function(e){
+                var company = $("#txtCompany").val();
+                var location = $("#txtLocation").val();
+                var gender = $("#txtGender").val();
+                var department = $("#txtDepartment").val();
+
+                if(company == ""){
+                    alert("Please select company!");
+                    return false;
+                }
+
+                if(location == ""){
+                    alert("Please select location!");
+                    return false;
+                }
+
+                if(gender == ""){
+                    alert("Please select gender!");
+                    return false;
+                }
+
+                if(department == ""){
+                    alert("Please select department!");
+                    return false;
+                }
+            });
 
             $( "#assignee-form" ).validate({
                 errorClass: "state-error",
@@ -136,19 +163,6 @@
                     txtContactNo1: {
                         required: true
                     },
-                    // txtAddress: {
-                    //     required: true
-                    // },
-                    // txtCostCenter: {
-                    //     required: true
-                    // },
-                    // txtImmediateHead: {
-                    //     required: true
-                    // },
-                    // txtImmediateEmailAddress: {
-                    //     required: true,
-                    //     email: true
-                    // },
                     txtLicenseNo: {
                         required: true
                     },
@@ -177,19 +191,6 @@
                     txtContactNo1: {
                         required: 'Please enter assignee contact no!'
                     },
-                    // txtAddress: {
-                    //     required: 'Please enter assignee address!'
-                    // },
-                    // txtCostCenter: {
-                    //     required: 'Please enter costcenter!'
-                    // },
-                    // txtImmediateHead: {
-                    //     required: 'Please enter immediate head!'
-                    // },
-                    // txtImmediateEmailAddress: {
-                    //     required: 'Please enter immediate head email address!',
-                    //     email: 'Please enter a valid email address!'
-                    // },
                     txtLicenseNo: {
                         required: 'Please enter license no!'
                     },
