@@ -31,5 +31,6 @@
 	define(REPAIRCOSTPERSUPPLIER_CONTROLLER, "repairCostPerSupplierController.php");
 	define(EQUIPMENTMASTERLIST_CONTROLLER, "equipmentMasterListController.php");
 	define(REPAIRHISTORY_CONTROLLER, "repairHistoryController.php");
+	define(YEAR_CONTROLLER, "yearController.php");
 	// -- END CONTROLLERS --
 ?>

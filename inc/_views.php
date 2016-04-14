@@ -1,4 +1,4 @@
-// <?
+<?
 	// -- START VIEWS --
 	// CONTROL NO
 	define(V_CONTROLNO, "controlno.php");
@@ -101,6 +101,11 @@
 	define(V_DEPARTMENT, "department.php");
 	define(V_DEPARTMENTADD, "department_add.php");
 	define(V_DEPARTMENTEDIT, "department_edit.php");
+
+	// DEPARTMENT
+	define(V_YEAR, "year.php");
+	define(V_YEARADD, "year_add.php");
+	define(V_YEAREDIT, "year_edit.php");
 
 	// USER LOGIN
 	define(V_LOGIN, "login.php");

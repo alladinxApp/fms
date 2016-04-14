@@ -28,6 +28,7 @@
 	define(INVOICING_MODEL, "invoicingModel.php");
 	define(NOTIFICATION_MODEL, "notificationModel.php");
 	define(DEPARTMENT_MODEL, "departmentModel.php");
+	define(YEAR_MODEL, "yearModel.php");
 
 	define(FPDF_MODEL, "fpdf.php");
 	define(MAILHANDLER_MODEL, "mailModel.php");
