@@ -70,6 +70,17 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-md-3" for="txtYear">Year</label>
+                    <div class="col-md-4">
+                        <select class="required" name="txtYear" id="txtYear">
+                            <!-- <option value="">Select Make</option> -->
+                            <? for($i=0;$i<count($row_yearmst);$i++){ ?>
+                            <option value="<?=$row_yearmst[$i]['yearID'];?>"><?=$row_yearmst[$i]['description'];?></option>
+                            <? } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-md-3" for="txtMake">Make</label>
                     <div class="col-md-4">
                         <select class="required" name="txtMake" id="txtMake">
@@ -81,23 +92,23 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3" for="txtLocation">Location</label>
-                    <div class="col-md-4">
-                        <select class="required" name="txtLocation" id="txtLocation">
-                            <!-- <option value="">Select Location</option> -->
-                            <? for($i=0;$i<count($row_locationmst);$i++){ ?>
-                            <option value="<?=$row_locationmst[$i]['locationID'];?>"><?=$row_locationmst[$i]['locationName'];?></option>
-                            <? } ?>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="col-md-3" for="txtModel">Model</label>
                     <div class="col-md-4">
                         <select class="required" name="txtModel" id="txtModel">
                             <!-- <option value="">Select Model</option> -->
                             <? for($i=0;$i<count($row_modelmst);$i++){ ?>
                             <option value="<?=$row_modelmst[$i]['modelID'];?>"><?=$row_modelmst[$i]['description'];?></option>
+                            <? } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3" for="txtLocation">Location</label>
+                    <div class="col-md-4">
+                        <select class="required" name="txtLocation" id="txtLocation">
+                            <!-- <option value="">Select Location</option> -->
+                            <? for($i=0;$i<count($row_locationmst);$i++){ ?>
+                            <option value="<?=$row_locationmst[$i]['locationID'];?>"><?=$row_locationmst[$i]['locationName'];?></option>
                             <? } ?>
                         </select>
                     </div>
@@ -184,12 +195,6 @@
                     <label class="col-md-3" for="txtPlateNo">Plate No</label>
                     <div class="col-md-4">
                         <input type="text" name="txtPlateNo" id="txtPlateNo" class="form-control gui-input input-sm" placeholder="Enter Plate No Here..." />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3" for="txtYear">Year</label>
-                    <div class="col-md-4">
-                        <input type="text" name="txtYear" id="txtYear" maxlength="4" class="form-control gui-input input-sm" placeholder="Enter Year Here..." />
                     </div>
                 </div>
                 <div class="form-group">

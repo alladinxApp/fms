@@ -95,15 +95,6 @@
                 centsLimit: 0
             });
 
-            // NUMBERS ONLY
-            $('#txtYear').priceFormat({
-                clearPrefix: true,
-                prefix: '',
-                centsSeparator: '',
-                thousandsSeparator: '',
-                centsLimit: 0
-            });
-
             // NUMBERS w/ DECIMAL AND COMMA
             $('#txtGasolineAllocationInCash,#txtAcquisitionCost,#txtInsuranceCost,#txtRegistrationCost,#txtDepresitionValue').priceFormat({
                 clearPrefix: true,
@@ -126,7 +117,7 @@
             });
 
             // SELECTION BOX
-            $('#txtAssignee,#txtCustomer,#txtCompany,#txtCategory,#txtMake,#txtLocation,#txtModel,#txtStatus').multiselect();
+            $('#txtAssignee,#txtCustomer,#txtCompany,#txtCategory,#txtMake,#txtLocation,#txtModel,#txtStatus,#txtYear').multiselect();
 
             $( "#equipment-form" ).validate({
                 errorClass: "state-error",

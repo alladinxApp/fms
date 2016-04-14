@@ -66,6 +66,15 @@
 	$modelmst->doQuery("query");
 	$row_modelmst = $modelmst->getLists();
 
+	// SET YEAR
+	$yearmst = new Table;
+	$yearmst->setSQLType($fms_db->getSQLType());
+	$yearmst->setInstance($fms_db->getInstance());
+	$yearmst->setView("v_yearmaster");
+	$yearmst->setParam("WHERE status = '1' ORDER BY description DESC LIMIT 0,30");
+	$yearmst->doQuery("query");
+	$row_yearmst = $yearmst->getLists();
+
 	// CLOSING FMS DB 
 	$fms_db->DBClose();
 ?>

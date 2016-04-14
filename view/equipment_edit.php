@@ -90,6 +90,25 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-3" for="txtYear">Year</label>
+                    <div class="col-sm-4">
+                        <select class="required" name="txtYear" id="txtYear">
+                            <!-- <option value="">Select Make</option> -->
+                            <? 
+                                $selected = null;
+                                for($i=0;$i<count($row_yearmst);$i++){ 
+                                    if($row_yearmst[$i]['yearID'] == $row_equipment[0]['year']){
+                                        $selected = 'selected';
+                                    }else{
+                                        $selected = null;
+                                    }
+                            ?>
+                            <option value="<?=$row_yearmst[$i]['yearID'];?>" <?=$selected;?>><?=$row_yearmst[$i]['description'];?></option>
+                            <? } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-3" for="txtMake">Make</label>
                     <div class="col-sm-4">
                         <select class="required" name="txtMake" id="txtMake">
@@ -104,6 +123,26 @@
                                     }
                             ?>
                             <option value="<?=$row_makemst[$i]['makeID'];?>" <?=$selected;?>><?=$row_makemst[$i]['makeName'];?></option>
+                            <? } ?>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3" for="txtModel">Model</label>
+                    <div class="col-sm-4">
+                        <select class="required" name="txtModel" id="txtModel">
+                            <!-- <option value="">Select Model</option> -->
+                            <? 
+                                $selected = null;
+                                for($i=0;$i<count($row_modelmst);$i++){ 
+                                    if($row_modelmst[$i]['modelID'] == $row_equipment[0]['modelID']){
+                                        $selected = 'selected';
+                                    }else{
+                                        $selected = null;
+                                    }
+                            ?>
+                            <option value="<?=$row_modelmst[$i]['modelID'];?>" <?=$selected;?>><?=$row_modelmst[$i]['description'];?></option>
                             <? } ?>
                         </select>
                     </div>
@@ -123,25 +162,6 @@
                                     }
                             ?>
                             <option value="<?=$row_locationmst[$i]['locationID'];?>" <?=$selected;?>><?=$row_locationmst[$i]['locationName'];?></option>
-                            <? } ?>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3" for="txtModel">Model</label>
-                    <div class="col-sm-4">
-                        <select class="required" name="txtModel" id="txtModel">
-                            <!-- <option value="">Select Model</option> -->
-                            <? 
-                                $selected = null;
-                                for($i=0;$i<count($row_modelmst);$i++){ 
-                                    if($row_modelmst[$i]['modelID'] == $row_equipment[0]['modelID']){
-                                        $selected = 'selected';
-                                    }else{
-                                        $selected = null;
-                                    }
-                            ?>
-                            <option value="<?=$row_modelmst[$i]['modelID'];?>" <?=$selected;?>><?=$row_modelmst[$i]['description'];?></option>
                             <? } ?>
                         </select>
                     </div>
@@ -228,12 +248,6 @@
                     <label class="col-sm-3" for="txtPlateNo">Plate No</label>
                     <div class="col-lg-4">
                         <input type="text" value="<?=$row_equipment[0]['plateNo'];?>" name="txtPlateNo" id="txtPlateNo" class="form-control gui-input input-sm" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3" for="txtYear">Year</label>
-                    <div class="col-lg-4">
-                        <input type="text" value="<?=$row_equipment[0]['year'];?>" name="txtYear" id="txtYear" maxlength="4" class="form-control gui-input input-sm" />
                     </div>
                 </div>
                 <div class="form-group">

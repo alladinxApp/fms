@@ -5,6 +5,7 @@
 		$assignee = $_POST['txtAssignee'];
 		$company = $_POST['txtCompany'];
 		$category = $_POST['txtCategory'];
+		$year = $_POST['txtDescription'];
 		$make = $_POST['txtMake'];
 		$location = $_POST['txtLocation'];
 		$model = $_POST['txtModel'];
@@ -20,7 +21,6 @@
 		$registrationExpiryDate = $_POST['txtRegistrationExpiryDate'];
 		$purchaseDate = $_POST['txtPurchaseDate'];
 		$conductionSticker = $_POST['txtConductionSticker'];
-		$year = $_POST['txtYear'];
 		$plateNo = strtoupper($_POST['txtPlateNo']);
 		$engineNo = $_POST['txtEngineNo'];
 		$chassisNo = $_POST['txtChassisNo'];
