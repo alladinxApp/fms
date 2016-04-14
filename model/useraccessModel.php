@@ -19,7 +19,7 @@
 	$menumst->setSQLType($fms_db->getSQLType());
 	$menumst->setInstance($fms_db->getInstance());
 	$menumst->setView("v_menumaster");
-	$menumst->setParam("WHERE menuID NOT IN(SELECT menuID FROM v_usermenu WHERE userID = '$id')");
+	$menumst->setParam("WHERE status = '1' AND menuID NOT IN(SELECT menuID FROM v_usermenu WHERE userID = '$id')");
 	$menumst->doQuery("query");
 	$row_menumst = $menumst->getLists();
 
