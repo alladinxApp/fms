@@ -72,6 +72,16 @@
     <!-- End: Main -->
 
     <? require_once(INCLUDE_PATH . "_pageScript.php");?>
-
+    <script type="text/javascript" src="assets/js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="assets/js/getData.js"></script>
+    <script type="text/javascript">
+        function updateAssCompanyAccess(val,act,div){
+            var strURL = 'divUpdAssCompAccess.php?id=' + val + '&act=' + act + '&div=' + div;
+            this.getData(strURL,'#'+div);
+        }
+    </script>
+    <div id="preloader" style="display: none;">Please wait...........
+        <div><img src="imgs/loader.gif" id="preloader_image" ></div>
+    </div>
 </body>
 </html>

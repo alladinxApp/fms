@@ -2,7 +2,7 @@ function getData(url,div){
     $.blockUI({ 
     message: $('#preloader_image'),  
     fadeIn: 1000, 
-        onBlock: function() {   
+        onBlock: function() {
             $.ajax({
             url: url,
             type: 'POST',
