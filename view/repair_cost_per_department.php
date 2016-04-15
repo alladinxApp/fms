@@ -35,7 +35,7 @@
             <button class="btn btn-sm btn-primary btn-block btn-gradient" type="submit"> EXPORT </button>
         </div>
     </div>
-    <input type="hidden" name="export" id="export" value="tba_cost_per_supplier" />
+    <input type="hidden" name="export" id="export" value="repair_cost_per_department" />
     <input type="hidden" name="txtFromDt" id="txtFromDt" value="<?=$fromdt;?>" />
     <input type="hidden" name="txtToDt" id="txtToDt" value="<?=$todt;?>" />
 </div>

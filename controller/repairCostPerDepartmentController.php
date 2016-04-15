@@ -73,6 +73,9 @@
 		$equipmentmst->setParam("WHERE status = '1' ORDER BY equipmentID");
 		$equipmentmst->doQuery("query");
 		$row_equipmentmst = $equipmentmst->getLists();
+		
+		// CLOSING FMS DB
+		$fms_db->DBClose();
 
 		// LOOP DEPARTMENT
 		for($i=0;$i<count($row_deptmst);$i++){
@@ -222,9 +225,6 @@
 		// END DEPARTMENT
 		
 		$rowData = $rowData1;
-
-		// CLOSING FMS DB
-		$fms_db->DBClose();
 	}
 	// END SEARCH REPAIR COST PER DEPARTMENT
 ?>

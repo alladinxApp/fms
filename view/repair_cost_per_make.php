@@ -5,7 +5,7 @@
 <div class="row">
     <div class="panel">
         <div class="panel-body">
-            <form role="form" class="form-horizontal" method="Post" id="workorder-search" action="repair_cost_per_department.php">
+            <form role="form" class="form-horizontal" method="Post" id="workorder-search" action="repair_cost_per_make.php">
                 <div class="form-group">
                     <label class="col-lg-2" for="txtFromDt">From</label>
                     <div class="col-lg-2">
@@ -35,7 +35,7 @@
             <button class="btn btn-sm btn-primary btn-block btn-gradient" type="submit"> EXPORT </button>
         </div>
     </div>
-    <input type="hidden" name="export" id="export" value="tba_cost_per_supplier" />
+    <input type="hidden" name="export" id="export" value="repair_cost_per_make" />
     <input type="hidden" name="txtFromDt" id="txtFromDt" value="<?=$fromdt;?>" />
     <input type="hidden" name="txtToDt" id="txtToDt" value="<?=$todt;?>" />
 </div>
@@ -70,7 +70,6 @@
                         <?
                             $equipments = $rowData[$i]['equipments'];
                             for($a=0;$a<count($equipments);$a++){
-                                $cellRow = null;
                                 $bg = null;
                                 
                                 if($cnt % 2){

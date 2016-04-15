@@ -65,6 +65,9 @@
 		$equipmentmst->doQuery("query");
 		$row_equipmentmst = $equipmentmst->getLists();
 
+		// CLOSING FMS DB
+		$fms_db->DBClose();
+
 		// LOOP MAKE
 		for($b=0;$b<count($row_makemst);$b++){
 			$makeID = $row_makemst[$b]['makeID'];
@@ -205,9 +208,6 @@
 		// END MAKE
 		
 		$rowData = $rowData1;
-
-		// CLOSING FMS DB
-		$fms_db->DBClose();
 	}
-	// END SEARCH REPAIR COST PER DEPARTMENT
+	// END SEARCH REPAIR COST PER MAKE
 ?>
