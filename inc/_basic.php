@@ -27,6 +27,6 @@
 	define(SMTP, "class.smtp.php");
 
 	$today = date("Y-m-d h:i:s");
-	$data_animate_time = 400;
+	$data_animate_time = 100;
 	$data_animate_type = 'fadeIn';
 ?>

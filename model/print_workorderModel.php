@@ -58,6 +58,11 @@
 		}
 		public function ImprovedTable(){
 			$this->SetFont('Courier','B',8);
+			$this->Cell(30,5,'Work Order #:','TRLB',0,'L');
+			$this->SetFont('Courier','',8);
+			$this->Cell(160,5,$this->womst['woReferenceNo'],'TRB',0,'L');
+			$this->Ln();
+			$this->SetFont('Courier','B',8);
 			$this->Cell(30,5,'Company Name:','TRLB',0,'L');
 			$this->SetFont('Courier','',8);
 			$this->Cell(160,5,$this->companyName,'TRB',0,'L');

@@ -3,6 +3,7 @@
     require_once(MODEL_PATH . SESSION_MODEL);
     require_once(MODEL_PATH . USERMENU_MODEL);
     require_once(MODEL_PATH . OPENREMINDERS_MODEL);
+    require_once(MODEL_PATH . ASSIGNEECOMPANY_MODEL);
     require_once(MODEL_PATH . WORKORDER_MODEL);
     require_once(CONTROLLER_PATH . WORKORDER_CONTROLLER);
     require_once(MODEL_PATH . NOTIFICATION_MODEL);

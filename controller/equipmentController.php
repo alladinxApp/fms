@@ -5,7 +5,7 @@
 		$assignee = $_POST['txtAssignee'];
 		$company = $_POST['txtCompany'];
 		$category = $_POST['txtCategory'];
-		$year = $_POST['txtDescription'];
+		$year = $_POST['txtYear'];
 		$make = $_POST['txtMake'];
 		$location = $_POST['txtLocation'];
 		$model = $_POST['txtModel'];
@@ -58,7 +58,7 @@
 								,'$registrationDate','$registrationExpiryDate'
 								,'$sys_UserID','$today'");
 		$ins_equipment->doQuery("save");
-
+		
 		// SAVE ASSIGNEE EQUIPMENT
 		$ins_ass_equip = new Table;
 		$ins_ass_equip->setSQLType($fms_db->getSQLType());
@@ -67,7 +67,7 @@
 		$ins_ass_equip->setField("id,assigneeID,equipmentID,assignedStart");
 		$ins_ass_equip->setValues("'$newNum1','$assignee','$newNum','$today'");
 		$ins_ass_equip->doQuery("save");
-		
+
 		// CLOSING FMS DB
 		$fms_db->DBClose();
 
