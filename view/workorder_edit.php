@@ -97,6 +97,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
+                        <? if($_SESSION['SYS_USERTYPE'] != 2){ ?>
                         <? if($status == 0){ ?>
                         <div class="form-group">
                             <div class="col-sm-4">
@@ -261,6 +262,7 @@
                             </div>
                             <? } ?>
                         </span>
+                        <? } ?>
                     </div>
                 </div>
                 <? if($status > 1 && $status != 7 && $status != 8){ ?>
@@ -360,7 +362,7 @@
                     <div class="col-lg-2">
                         <select class="required" name="txtStatus" id="txtStatus">
                             <? if($status == 0){ ?><option value="0" <? if($status == 0){ echo 'selected'; } ?>>OPEN</option><? } ?>
-                            <? if($status == 0 || $status == 1 && $isSent > 0){ ?><option value="1" <? if($status == 1){ echo 'selected'; } ?>>FOR APPROVAL</option><? } ?>
+                            <? if(($status == 0 || $status == 1) && $_SESSION['SYS_USERTYPE'] != 2){ ?><option value="1" <? if($status == 1){ echo 'selected'; } ?>>FOR APPROVAL</option><? } ?>
                             <? if($status == 0 || $status == 1){ ?><option value="8" <? if($status == 8){ echo 'selected'; } ?>>CANCEL</option><? } ?>
                             <? if($status == 2){ ?><option value="2" <? if($status == 2){ echo 'selected'; } ?>>APPROVED</option><? } ?>
                             <? if($status == 2 || $status == 3){ ?><option value="3" <? if($status == 3){ echo 'selected'; } ?>>ON REPAIR</option><? } ?>

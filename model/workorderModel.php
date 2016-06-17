@@ -3,12 +3,20 @@
 	$fms_db = new DBConfig;
 	$fms_db->setFleetDB();
 
+	if($_SESSION['SYS_USERTYPE'] != 1){
+		for($i=0;$i<count($_SESSION['SYS_ASSIGNEECOMPANIES']);$i++){
+			$a = "'" . $_SESSION['SYS_ASSIGNEECOMPANIES'][$i] . "',";
+		}
+		$a = rtrim($a,",");
+		$company = "companyID IN(".$a.") AND ";
+	}
+	
 	// SET WORK ORDER
 	$workordermst = new Table;
 	$workordermst->setSQLType($fms_db->getSQLType());
 	$workordermst->setInstance($fms_db->getInstance());
 	$workordermst->setView("v_workordermaster");
-	$workordermst->setParam("WHERE status NOT IN('5','6','7','8') ORDER BY status ASC, woReferenceNo DESC, woTransactionDate DESC");
+	$workordermst->setParam("WHERE $company status NOT IN('5','6','7','8') ORDER BY status ASC, woReferenceNo DESC, woTransactionDate DESC");
 	$workordermst->doQuery("query");
 	$row_workordermst = $workordermst->getLists();
 

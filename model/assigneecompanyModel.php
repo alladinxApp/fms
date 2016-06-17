@@ -24,7 +24,11 @@
 	$companymst->setSQLType($fms_db->getSQLType());
 	$companymst->setInstance($fms_db->getInstance());
 	$companymst->setView("v_companymaster");
-	$companymst->setParam("WHERE companyID NOT IN(SELECT companyID FROM v_assigneecompanymapper WHERE assigneeID = '$id')");
+
+	if($_SESSION['SYS_USERTYPE'] != 1){
+		$companymst->setParam("WHERE companyID NOT IN(SELECT companyID FROM v_assigneecompanymapper WHERE assigneeID = '$id')");
+	}
+	
 	$companymst->doQuery("query");
 	$row_companymst = $companymst->getLists();
 
@@ -37,7 +41,9 @@
 
 	    // GET ARRAY OF COMPANIES
 	    for($i=0;$i<count($row_assigneecompany);$i++){
-	        $companies[] = $row_assigneecompany[$i]['companyID']; 
+	    	if($row_assigneecompany[$i]['isShow'] == 1){
+	        	$companies[] = $row_assigneecompany[$i]['companyID']; 
+	    	}
 	    }
 	    
 	    // SET ARRAY OF COMPANIES TO SESSION

@@ -75,6 +75,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
+                        <? if($_SESSION['SYS_USERTYPE'] != 2){ ?>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <select class="required" name="txtNewParts" id="txtNewParts">
@@ -142,6 +143,7 @@
                                 </div>
                             </div>
                         </span>
+                        <? } ?>
                     </div>
                 </div>
                 <div class="form-group">
