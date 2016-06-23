@@ -35,7 +35,7 @@
             <button class="btn btn-sm btn-primary btn-block btn-gradient" type="submit"> EXPORT </button>
         </div>
     </div>
-    <input type="hidden" name="export" id="export" value="repair_cost_per_supplier" />
+    <input type="hidden" name="exportReport" id="exportReport" value="repaircostpersupplier" />
     <input type="hidden" name="txtFromDt" id="txtFromDt" value="<?=$fromdt;?>" />
     <input type="hidden" name="txtToDt" id="txtToDt" value="<?=$todt;?>" />
 </div>
@@ -81,7 +81,6 @@
                         $t_others = 0;
                         for($i=0;$i<count($rowData);$i++){
                             $grandTotal += $rowData[$i]['total'];
-                            $average = 
                             $t_parts += $rowData[$i]['parts'];
                             $t_misc += $rowData[$i]['miscellaneous'];
                             $t_labor += $rowData[$i]['labor'];
