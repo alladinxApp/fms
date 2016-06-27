@@ -1105,6 +1105,56 @@
 					$data = trim($ln);
 					$filename = "repair_cost_per_supplier_" . $dt . ".csv";
 				break;
+			case "equipmentmasterlist":
+					$search = "";
+
+					if(!empty($_POST['txtAssignee'])){
+						$sassignee = $_POST['txtAssignee'];
+						$search .= " AND assigneeName LIKE '%$sassignee%'";
+					}
+
+					if(!empty($_POST['txtEquipment'])){
+						$sequipment = $_POST['txtEquipment'];
+						$search .= " AND (conductionSticker LIKE '%$sequipment%' OR plateNo LIKE '%$sequipment%')";
+					}
+					
+					if(!empty($_POST['txtDepartment'])){
+						$sdepartment = $_POST['txtDepartment'];
+						$search .= " AND departmentName LIKE '%$sdepartment%'";
+					}
+
+					// SET FMS DB
+					$fms_db = new DBConfig;
+					$fms_db->setFleetDB();
+
+					// SET WORK ORDER
+					$searchequip = new Table;
+					$searchequip->setSQLType($fms_db->getSQLType());
+					$searchequip->setInstance($fms_db->getInstance());
+					$searchequip->setView("v_equipmentmaster");
+					$searchequip->setParam("WHERE 1 $search ORDER BY assigneeName");
+					$searchequip->doQuery("query");
+					$row = $searchequip->getLists();
+					$num_searchequip = count($row_searchequip);
+					
+					// CLOSING FMS DB
+					$fms_db->DBClose();
+
+					$ln .= "EQUIPMENT MASTER LIST REPORT\r\n\r\n";
+
+					$ln .= "Assignee,Company,Department,Coduction/Plate#,Make|Model|Year,Location\r\n\r\n";
+
+					for($i=0;$i<count($row);$i++){
+						$equipno = $row[$i]['plateNo'] != "" ? $row[$i]['plateNo'] : $row[$i]['conductionSticker'];
+						$mmy = $row[$i]['makeName'] . " " . $row[$i]['modelName'] . " " . $row[$i]['yearDesc'];
+
+						$ln .= $row[$i]['assigneeName'] . "," . $row[$i]['companyName'] . "," . $row[$i]['departmentName']
+						. "," . $equipno . "," . $mmy . "," . $row[$i]['locationName'] . "\r\n";
+					}
+
+					$data = trim($ln);
+					$filename = "equipment_master_list_report_" . $dt . ".csv";
+				break;
 			default: break;
 		}
 

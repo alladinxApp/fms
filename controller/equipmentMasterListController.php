@@ -5,38 +5,35 @@
 		$fromdt = date("Y-m-d 00:00");
 		$todt = date("Y-m-d 23:59");
 		$search = "";
-		
-		if(!empty($_POST['txtFromDt'])){
-			$fromdt = dateFormat($_POST['txtFromDt'], "Y-m-d");
+
+		if(!empty($_POST['txtAssignee'])){
+			$sassignee = $_POST['txtAssignee'];
+			$search .= " AND assigneeName LIKE '%$sassignee%'";
 		}
 
-		if(!empty($_POST['txtToDt'])){
-			$todt = dateFormat($_POST['txtFromDt'], "Y-m-d");
+		if(!empty($_POST['txtEquipment'])){
+			$sequipment = $_POST['txtEquipment'];
+			$search .= " AND (conductionSticker LIKE '%$sequipment%' OR plateNo LIKE '%$sequipment%')";
 		}
 		
-		if(!empty($_POST['txtIsWarranty'])){
-			$isWarranty = $_POST['txtIsWarranty'];
-			$search .= "AND isWarranty = '$isWarranty' ";
+		if(!empty($_POST['txtDepartment'])){
+			$sdepartment = $_POST['txtDepartment'];
+			$search .= " AND departmentName LIKE '%$sdepartment%'";
 		}
-
-		// if($search == null){
-		// 	$dt = date("Y-m-d");
-		// 	$search .= "AND (woTransactionDate between '$dt 00:00' AND '$dt 23:59') ";
-		// }
 
 		// SET FMS DB
 		$fms_db = new DBConfig;
 		$fms_db->setFleetDB();
 
 		// SET WORK ORDER
-		$searchwo = new Table;
-		$searchwo->setSQLType($fms_db->getSQLType());
-		$searchwo->setInstance($fms_db->getInstance());
-		$searchwo->setView("v_workordermaster");
-		$searchwo->setParam("WHERE 1 $search ORDER BY woReferenceNo DESC,woTransactionDate DESC");
-		$searchwo->doQuery("query");
-		$row_searchwo = $searchwo->getLists();
-		$num_searchwo = $searchwo->getLists();
+		$searchequip = new Table;
+		$searchequip->setSQLType($fms_db->getSQLType());
+		$searchequip->setInstance($fms_db->getInstance());
+		$searchequip->setView("v_equipmentmaster");
+		$searchequip->setParam("WHERE 1 $search ORDER BY assigneeName");
+		$searchequip->doQuery("query");
+		$row_searchequip = $searchequip->getLists();
+		$num_searchequip = count($row_searchequip);
 		
 		// CLOSING FMS DB
 		$fms_db->DBClose();
