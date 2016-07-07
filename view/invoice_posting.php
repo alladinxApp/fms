@@ -3,7 +3,8 @@
 </style>
 <div class="row">
     <form method="Post">
-        <a href="invoicing.php"><span class="fa fa-arrow-left"> BACK TO INVOICE LIST</span></a>
+        <a href="invoicing.php"><span class="fa fa-arrow-left"> BACK TO INVOICE LIST</span></a> | 
+    <a target="_blank" href="invoice_print.php?id=<?=$row_workorder[0]['invoiceReferenceNo'];?>"><span class="fa fa-print"> PRINT</span></a>
     </form>
 </div>
 <div class="row">

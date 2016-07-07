@@ -33,6 +33,7 @@
 	define(FPDF_MODEL, "fpdf.php");
 	define(MAILHANDLER_MODEL, "mailModel.php");
 	define(PRINTWO_MODEL, "print_workorderModel.php");
+	define(PRINTINVOICE_MODEL, "print_invoiceModel.php");
 
 	define(TBACOSTPERSUPPLIER_MODEL, "tbaCostPerSupplierModel.php");
 	define(REPAIRCOSTPERDEPARTMENT_MODEL, "repairCostPerDepartmentModel.php");
